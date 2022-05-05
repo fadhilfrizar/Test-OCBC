@@ -9,13 +9,21 @@
 /* Begin PBXBuildFile section */
 		F17C71552823D1D300B060FC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17C71542823D1D300B060FC /* AppDelegate.swift */; };
 		F17C71572823D1D300B060FC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17C71562823D1D300B060FC /* SceneDelegate.swift */; };
-		F17C71592823D1D300B060FC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17C71582823D1D300B060FC /* ViewController.swift */; };
+		F17C71592823D1D300B060FC /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17C71582823D1D300B060FC /* LoginController.swift */; };
 		F17C715C2823D1D300B060FC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F17C715A2823D1D300B060FC /* Main.storyboard */; };
 		F17C715E2823D1D500B060FC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F17C715D2823D1D500B060FC /* Assets.xcassets */; };
 		F17C71612823D1D500B060FC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F17C715F2823D1D500B060FC /* LaunchScreen.storyboard */; };
 		F17C716C2823D1D600B060FC /* OSBC_TestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17C716B2823D1D600B060FC /* OSBC_TestTests.swift */; };
 		F17C71762823D1D600B060FC /* OSBC_TestUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17C71752823D1D600B060FC /* OSBC_TestUITests.swift */; };
 		F17C71782823D1D600B060FC /* OSBC_TestUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17C71772823D1D600B060FC /* OSBC_TestUITestsLaunchTests.swift */; };
+		F17C71862823D48400B060FC /* RegisterController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17C71852823D48400B060FC /* RegisterController.swift */; };
+		F17C71882823D8B200B060FC /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17C71872823D8B200B060FC /* HomeController.swift */; };
+		F17C718B2823DCCB00B060FC /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17C718A2823DCCB00B060FC /* Reachability.swift */; };
+		F17C718F2823DCF500B060FC /* HistoryCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17C718D2823DCF400B060FC /* HistoryCollectionCell.swift */; };
+		F17C71902823DCF500B060FC /* HistoryCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F17C718E2823DCF500B060FC /* HistoryCollectionCell.xib */; };
+		F17C71932823DF0100B060FC /* LoginService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17C71922823DF0100B060FC /* LoginService.swift */; };
+		F17C71962823DF2E00B060FC /* LoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17C71952823DF2D00B060FC /* LoginModel.swift */; };
+		F17C71992823E0AD00B060FC /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17C71982823E0AD00B060FC /* LoginViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,7 +47,7 @@
 		F17C71512823D1D300B060FC /* OSBC Test.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "OSBC Test.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F17C71542823D1D300B060FC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F17C71562823D1D300B060FC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		F17C71582823D1D300B060FC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		F17C71582823D1D300B060FC /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
 		F17C715B2823D1D300B060FC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F17C715D2823D1D500B060FC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F17C71602823D1D500B060FC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -49,6 +57,14 @@
 		F17C71712823D1D600B060FC /* OSBC TestUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "OSBC TestUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F17C71752823D1D600B060FC /* OSBC_TestUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OSBC_TestUITests.swift; sourceTree = "<group>"; };
 		F17C71772823D1D600B060FC /* OSBC_TestUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OSBC_TestUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		F17C71852823D48400B060FC /* RegisterController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterController.swift; sourceTree = "<group>"; };
+		F17C71872823D8B200B060FC /* HomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeController.swift; sourceTree = "<group>"; };
+		F17C718A2823DCCB00B060FC /* Reachability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
+		F17C718D2823DCF400B060FC /* HistoryCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryCollectionCell.swift; sourceTree = "<group>"; };
+		F17C718E2823DCF500B060FC /* HistoryCollectionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HistoryCollectionCell.xib; sourceTree = "<group>"; };
+		F17C71922823DF0100B060FC /* LoginService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginService.swift; sourceTree = "<group>"; };
+		F17C71952823DF2D00B060FC /* LoginModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginModel.swift; sourceTree = "<group>"; };
+		F17C71982823E0AD00B060FC /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,9 +115,14 @@
 		F17C71532823D1D300B060FC /* OSBC Test */ = {
 			isa = PBXGroup;
 			children = (
+				F17C71972823E0A200B060FC /* ViewModel */,
+				F17C71942823DF2600B060FC /* Model */,
+				F17C71912823DEF700B060FC /* Service */,
+				F17C718C2823DCD600B060FC /* View */,
+				F17C71892823DCBC00B060FC /* Connection */,
+				F17C71842823D3DA00B060FC /* Controller */,
 				F17C71542823D1D300B060FC /* AppDelegate.swift */,
 				F17C71562823D1D300B060FC /* SceneDelegate.swift */,
-				F17C71582823D1D300B060FC /* ViewController.swift */,
 				F17C715A2823D1D300B060FC /* Main.storyboard */,
 				F17C715D2823D1D500B060FC /* Assets.xcassets */,
 				F17C715F2823D1D500B060FC /* LaunchScreen.storyboard */,
@@ -125,6 +146,57 @@
 				F17C71772823D1D600B060FC /* OSBC_TestUITestsLaunchTests.swift */,
 			);
 			path = "OSBC TestUITests";
+			sourceTree = "<group>";
+		};
+		F17C71842823D3DA00B060FC /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				F17C71582823D1D300B060FC /* LoginController.swift */,
+				F17C71852823D48400B060FC /* RegisterController.swift */,
+				F17C71872823D8B200B060FC /* HomeController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		F17C71892823DCBC00B060FC /* Connection */ = {
+			isa = PBXGroup;
+			children = (
+				F17C718A2823DCCB00B060FC /* Reachability.swift */,
+			);
+			path = Connection;
+			sourceTree = "<group>";
+		};
+		F17C718C2823DCD600B060FC /* View */ = {
+			isa = PBXGroup;
+			children = (
+				F17C718D2823DCF400B060FC /* HistoryCollectionCell.swift */,
+				F17C718E2823DCF500B060FC /* HistoryCollectionCell.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		F17C71912823DEF700B060FC /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				F17C71922823DF0100B060FC /* LoginService.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		F17C71942823DF2600B060FC /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				F17C71952823DF2D00B060FC /* LoginModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		F17C71972823E0A200B060FC /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				F17C71982823E0AD00B060FC /* LoginViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -231,6 +303,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F17C71902823DCF500B060FC /* HistoryCollectionCell.xib in Resources */,
 				F17C71612823D1D500B060FC /* LaunchScreen.storyboard in Resources */,
 				F17C715E2823D1D500B060FC /* Assets.xcassets in Resources */,
 				F17C715C2823D1D300B060FC /* Main.storyboard in Resources */,
@@ -258,9 +331,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F17C71592823D1D300B060FC /* ViewController.swift in Sources */,
+				F17C71862823D48400B060FC /* RegisterController.swift in Sources */,
+				F17C71592823D1D300B060FC /* LoginController.swift in Sources */,
+				F17C718F2823DCF500B060FC /* HistoryCollectionCell.swift in Sources */,
+				F17C718B2823DCCB00B060FC /* Reachability.swift in Sources */,
+				F17C71962823DF2E00B060FC /* LoginModel.swift in Sources */,
 				F17C71552823D1D300B060FC /* AppDelegate.swift in Sources */,
 				F17C71572823D1D300B060FC /* SceneDelegate.swift in Sources */,
+				F17C71882823D8B200B060FC /* HomeController.swift in Sources */,
+				F17C71992823E0AD00B060FC /* LoginViewModel.swift in Sources */,
+				F17C71932823DF0100B060FC /* LoginService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
