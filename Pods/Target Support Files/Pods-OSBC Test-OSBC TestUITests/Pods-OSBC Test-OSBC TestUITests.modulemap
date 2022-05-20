@@ -1,0 +1,6 @@
+framework module Pods_OSBC_Test_OSBC_TestUITests {
+  umbrella header "Pods-OSBC Test-OSBC TestUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -19,7 +19,13 @@ class HomeController: UIViewController {
     @IBOutlet weak var balanceLabel: UILabel!
     @IBOutlet weak var youHaveLabel: UILabel!
     @IBOutlet weak var topContainerView: UIView!
-    @IBOutlet weak var logoutButton: UIButton!
+    @IBOutlet weak var logoutButton: UIButton! {
+        didSet {
+            logoutButton.setTitleColor(UIColor.black, for: .normal)
+            logoutButton.setTitle("logout", for: .normal)
+            logoutButton.addTarget(self, action: #selector(logoutButtonAction), for: .touchUpInside)
+        }
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -37,4 +43,14 @@ class HomeController: UIViewController {
     }
     */
 
+}
+
+extension HomeController {
+    @objc func logoutButtonAction(_ sender: UIButton) {
+        LogoutHelper.shared.logoutCredentials()
+        let loginController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "loginController") as! LoginController
+        self.view.window?.rootViewController = loginController
+
+        self.view.window?.makeKeyAndVisible()
+    }
 }

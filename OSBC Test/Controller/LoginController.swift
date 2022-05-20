@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import RxSwift
 
 class LoginController: UIViewController {
     
@@ -42,6 +43,8 @@ class LoginController: UIViewController {
     @IBOutlet weak var usernameTextField: UITextField!
     @IBOutlet weak var loginLabel: UILabel!
     
+    private var disposeBag = DisposeBag()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -57,16 +60,16 @@ extension LoginController {
         let username = self.usernameTextField.text ?? ""
         let password = self.passwordTextField.text ?? ""
         
-        LoginService.shared.login(username: username, password: password) { login, err in
-            if let err = err {
-                print("failed to fetch login model data: ", err)
-                return
-            }
-            
-            print(login?.username ?? "")
-            print(login?.accountNo ?? "")
-            
-        }
+        LoginService.shared.login(username: username, password: password)
+            .subscribe(onNext: { items in
+                
+                LoginViewModel.shared.onSuccessLogin(accessToken: items.token ?? "", username: items.username ?? "", accountNo: items.accountNo ?? "", view: self.view)
+                
+            }, onError: {error in
+                
+                LoginViewModel.shared.onErrorLogin(error: error)
+                
+        }).disposed(by: disposeBag)
     }
     
     @objc func registerButtonAction(_ sender: UIButton) {
