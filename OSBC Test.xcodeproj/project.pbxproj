@@ -15,6 +15,18 @@
 		B685244028373AD000836AA1 /* Const.swift in Sources */ = {isa = PBXBuildFile; fileRef = B685243F28373AD000836AA1 /* Const.swift */; };
 		B685244328373C1600836AA1 /* LogoutHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B685244228373C1600836AA1 /* LogoutHelper.swift */; };
 		B685244528374D6700836AA1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B685244428374D6700836AA1 /* SceneDelegate.swift */; };
+		B68524472837521100836AA1 /* BalancesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B68524462837521100836AA1 /* BalancesModel.swift */; };
+		B68524492837526A00836AA1 /* BalancesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B68524482837526A00836AA1 /* BalancesService.swift */; };
+		B685244B283753D800836AA1 /* BalancesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B685244A283753D800836AA1 /* BalancesViewModel.swift */; };
+		B6F19613283774B20012747A /* LoginUnitTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6F19612283774B20012747A /* LoginUnitTest.swift */; };
+		B6F19615283774D50012747A /* RegisterUnitTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6F19614283774D50012747A /* RegisterUnitTest.swift */; };
+		B6F19617283775210012747A /* RegisterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6F19616283775210012747A /* RegisterModel.swift */; };
+		B6F19619283775530012747A /* RegisterService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6F19618283775530012747A /* RegisterService.swift */; };
+		B6F1961B283779250012747A /* TextFieldExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6F1961A283779250012747A /* TextFieldExtension.swift */; };
+		B6F1961D28377BEE0012747A /* RegisterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6F1961C28377BEE0012747A /* RegisterViewModel.swift */; };
+		B6F1961F28377DD40012747A /* TransactionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6F1961E28377DD40012747A /* TransactionModel.swift */; };
+		B6F1962128377EF60012747A /* TransactionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6F1962028377EF60012747A /* TransactionService.swift */; };
+		B6F1962328377FDB0012747A /* TransactionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6F1962228377FDB0012747A /* TransactionViewModel.swift */; };
 		F17C71552823D1D300B060FC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17C71542823D1D300B060FC /* AppDelegate.swift */; };
 		F17C71592823D1D300B060FC /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17C71582823D1D300B060FC /* LoginController.swift */; };
 		F17C715C2823D1D300B060FC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F17C715A2823D1D300B060FC /* Main.storyboard */; };
@@ -62,6 +74,18 @@
 		B685243F28373AD000836AA1 /* Const.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Const.swift; sourceTree = "<group>"; };
 		B685244228373C1600836AA1 /* LogoutHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoutHelper.swift; sourceTree = "<group>"; };
 		B685244428374D6700836AA1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		B68524462837521100836AA1 /* BalancesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalancesModel.swift; sourceTree = "<group>"; };
+		B68524482837526A00836AA1 /* BalancesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalancesService.swift; sourceTree = "<group>"; };
+		B685244A283753D800836AA1 /* BalancesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalancesViewModel.swift; sourceTree = "<group>"; };
+		B6F19612283774B20012747A /* LoginUnitTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginUnitTest.swift; sourceTree = "<group>"; };
+		B6F19614283774D50012747A /* RegisterUnitTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterUnitTest.swift; sourceTree = "<group>"; };
+		B6F19616283775210012747A /* RegisterModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterModel.swift; sourceTree = "<group>"; };
+		B6F19618283775530012747A /* RegisterService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterService.swift; sourceTree = "<group>"; };
+		B6F1961A283779250012747A /* TextFieldExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldExtension.swift; sourceTree = "<group>"; };
+		B6F1961C28377BEE0012747A /* RegisterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewModel.swift; sourceTree = "<group>"; };
+		B6F1961E28377DD40012747A /* TransactionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionModel.swift; sourceTree = "<group>"; };
+		B6F1962028377EF60012747A /* TransactionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionService.swift; sourceTree = "<group>"; };
+		B6F1962228377FDB0012747A /* TransactionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionViewModel.swift; sourceTree = "<group>"; };
 		BE2F99C9DDD8304BD2786257 /* Pods-OSBC Test-OSBC TestUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OSBC Test-OSBC TestUITests.release.xcconfig"; path = "Target Support Files/Pods-OSBC Test-OSBC TestUITests/Pods-OSBC Test-OSBC TestUITests.release.xcconfig"; sourceTree = "<group>"; };
 		F17C71512823D1D300B060FC /* OSBC Test.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "OSBC Test.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F17C71542823D1D300B060FC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -167,6 +191,7 @@
 			isa = PBXGroup;
 			children = (
 				B685244228373C1600836AA1 /* LogoutHelper.swift */,
+				B6F1961A283779250012747A /* TextFieldExtension.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -218,6 +243,8 @@
 		F17C716A2823D1D600B060FC /* OSBC TestTests */ = {
 			isa = PBXGroup;
 			children = (
+				B6F19612283774B20012747A /* LoginUnitTest.swift */,
+				B6F19614283774D50012747A /* RegisterUnitTest.swift */,
 				F17C716B2823D1D600B060FC /* OSBC_TestTests.swift */,
 			);
 			path = "OSBC TestTests";
@@ -262,7 +289,10 @@
 		F17C71912823DEF700B060FC /* Service */ = {
 			isa = PBXGroup;
 			children = (
+				B6F19618283775530012747A /* RegisterService.swift */,
 				F17C71922823DF0100B060FC /* LoginService.swift */,
+				B68524482837526A00836AA1 /* BalancesService.swift */,
+				B6F1962028377EF60012747A /* TransactionService.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -270,7 +300,10 @@
 		F17C71942823DF2600B060FC /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				B6F19616283775210012747A /* RegisterModel.swift */,
 				F17C71952823DF2D00B060FC /* LoginModel.swift */,
+				B68524462837521100836AA1 /* BalancesModel.swift */,
+				B6F1961E28377DD40012747A /* TransactionModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -279,6 +312,9 @@
 			isa = PBXGroup;
 			children = (
 				F17C71982823E0AD00B060FC /* LoginViewModel.swift */,
+				B6F1961C28377BEE0012747A /* RegisterViewModel.swift */,
+				B685244A283753D800836AA1 /* BalancesViewModel.swift */,
+				B6F1962228377FDB0012747A /* TransactionViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -529,14 +565,24 @@
 				F17C71592823D1D300B060FC /* LoginController.swift in Sources */,
 				F17C718F2823DCF500B060FC /* HistoryCollectionCell.swift in Sources */,
 				F17C718B2823DCCB00B060FC /* Reachability.swift in Sources */,
+				B68524472837521100836AA1 /* BalancesModel.swift in Sources */,
+				B6F19619283775530012747A /* RegisterService.swift in Sources */,
 				F17C71962823DF2E00B060FC /* LoginModel.swift in Sources */,
+				B6F19617283775210012747A /* RegisterModel.swift in Sources */,
 				B685243D28372E2D00836AA1 /* HTTPStatusCode.swift in Sources */,
 				B685244328373C1600836AA1 /* LogoutHelper.swift in Sources */,
+				B6F1961F28377DD40012747A /* TransactionModel.swift in Sources */,
+				B68524492837526A00836AA1 /* BalancesService.swift in Sources */,
+				B6F1961B283779250012747A /* TextFieldExtension.swift in Sources */,
 				F17C71552823D1D300B060FC /* AppDelegate.swift in Sources */,
 				F17C71882823D8B200B060FC /* HomeController.swift in Sources */,
+				B6F1961D28377BEE0012747A /* RegisterViewModel.swift in Sources */,
 				F17C71992823E0AD00B060FC /* LoginViewModel.swift in Sources */,
 				F17C71932823DF0100B060FC /* LoginService.swift in Sources */,
+				B685244B283753D800836AA1 /* BalancesViewModel.swift in Sources */,
 				B685244028373AD000836AA1 /* Const.swift in Sources */,
+				B6F1962128377EF60012747A /* TransactionService.swift in Sources */,
+				B6F1962328377FDB0012747A /* TransactionViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -544,7 +590,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B6F19615283774D50012747A /* RegisterUnitTest.swift in Sources */,
 				F17C716C2823D1D600B060FC /* OSBC_TestTests.swift in Sources */,
+				B6F19613283774B20012747A /* LoginUnitTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

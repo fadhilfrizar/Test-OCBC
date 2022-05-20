@@ -10,6 +10,11 @@ import RxSwift
 
 class LoginController: UIViewController {
     
+    @IBOutlet weak var indicator: UIActivityIndicatorView! {
+        didSet {
+            indicator.isHidden = true
+        }
+    }
     @IBOutlet weak var loginButton: UIButton! {
         didSet {
             loginButton.clipsToBounds = true
@@ -39,8 +44,31 @@ class LoginController: UIViewController {
     
     @IBOutlet weak var passwordErrorMessageLabel: UILabel!
     @IBOutlet weak var usernameErrorMessageLabel: UILabel!
-    @IBOutlet weak var passwordTextField: UITextField!
-    @IBOutlet weak var usernameTextField: UITextField!
+    @IBOutlet weak var passwordTextField: UITextField! {
+        didSet {
+            passwordTextField.layer.borderWidth = 2.0
+            passwordTextField.layer.borderColor = UIColor.black.cgColor
+            passwordTextField.attributedPlaceholder = NSAttributedString(
+                string: "password",
+                attributes: [NSAttributedString.Key.foregroundColor: UIColor.black]
+            )
+            passwordTextField.setLeftPaddingPoints(10)
+            passwordTextField.setRightPaddingPoints(10)
+        }
+    }
+    @IBOutlet weak var usernameTextField: UITextField! {
+        didSet {
+            usernameTextField.layer.borderWidth = 2.0
+            usernameTextField.layer.borderColor = UIColor.black.cgColor
+            usernameTextField.attributedPlaceholder = NSAttributedString(
+                string: "username",
+                attributes: [NSAttributedString.Key.foregroundColor: UIColor.black]
+            )
+            
+            usernameTextField.setLeftPaddingPoints(10)
+            usernameTextField.setRightPaddingPoints(10)
+        }
+    }
     @IBOutlet weak var loginLabel: UILabel!
     
     private var disposeBag = DisposeBag()
@@ -60,19 +88,29 @@ extension LoginController {
         let username = self.usernameTextField.text ?? ""
         let password = self.passwordTextField.text ?? ""
         
+        self.indicator.startAnimating()
+        self.indicator.isHidden = false
+        
         LoginService.shared.login(username: username, password: password)
             .subscribe(onNext: { items in
                 
                 LoginViewModel.shared.onSuccessLogin(accessToken: items.token ?? "", username: items.username ?? "", accountNo: items.accountNo ?? "", view: self.view)
                 
+                self.indicator.stopAnimating()
+                self.indicator.isHidden = true
+                
             }, onError: {error in
                 
                 LoginViewModel.shared.onErrorLogin(error: error)
+                
+                self.indicator.stopAnimating()
+                self.indicator.isHidden = true
                 
         }).disposed(by: disposeBag)
     }
     
     @objc func registerButtonAction(_ sender: UIButton) {
-        
+        let controller = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "registerController") as! RegisterController
+        self.navigationController?.pushViewController(controller, animated: true)
     }
 }

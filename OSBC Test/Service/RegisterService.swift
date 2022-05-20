@@ -1,22 +1,22 @@
 //
-//  LoginService.swift
+//  RegisterService.swift
 //  OSBC Test
 //
-//  Created by Frizar Fadilah on 05/05/22.
+//  Created by frizar fadilah on 20/05/22.
 //
 
 import Foundation
 import RxSwift
 import Alamofire
 
-class LoginService: NSObject {
+class RegisterService: NSObject {
     
-    static let shared = LoginService()
+    static let shared = RegisterService()
     
-    func login(username: String, password: String) -> Observable<LoginModel> {
+    func register(username: String, password: String) -> Observable<RegisterModel> {
 
         // Build URL
-        let url = Const.Base_Api + "login"
+        let url = Const.Base_Api + "register"
 
         let header: HTTPHeaders = [
             "Content-Type": "application/json",

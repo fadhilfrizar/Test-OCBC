@@ -17,12 +17,11 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             let window = UIWindow(windowScene: windowScene)
             
             let accessToken = UserDefaults.standard.string(forKey: Const.PREF_ACCESS_TOKEN)
-            print("access token", accessToken?.count)
             if accessToken?.isEmpty ?? true {
                 //set your login viewcontroller as root viewcontroller
                 DispatchQueue.main.async {
                     let loginController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "loginController") as! LoginController
-                    window.rootViewController = loginController
+                    window.rootViewController = UINavigationController(rootViewController: loginController)
 
 //                    self.window?.rootViewController = loginController
                     self.window?.makeKeyAndVisible()

@@ -13,8 +13,8 @@ import RxSwift
 import Alamofire
 
 // Class will be used to handle api response from server
-class RevampBaseApiManager {
-    static let instance = RevampBaseApiManager()
+class BaseApiManager {
+    static let instance = BaseApiManager()
     var sessionManager = Alamofire.SessionManager()
     var configuration = URLSessionConfiguration.default
     
