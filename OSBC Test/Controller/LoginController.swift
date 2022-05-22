@@ -42,8 +42,16 @@ class LoginController: UIViewController {
         }
     }
     
-    @IBOutlet weak var passwordErrorMessageLabel: UILabel!
-    @IBOutlet weak var usernameErrorMessageLabel: UILabel!
+    @IBOutlet weak var passwordErrorMessageLabel: UILabel! {
+        didSet {
+            passwordErrorMessageLabel.text = "password is required"
+        }
+    }
+    @IBOutlet weak var usernameErrorMessageLabel: UILabel! {
+        didSet {
+            usernameErrorMessageLabel.text = "username is required"
+        }
+    }
     @IBOutlet weak var passwordTextField: UITextField! {
         didSet {
             passwordTextField.layer.borderWidth = 2.0
@@ -71,8 +79,6 @@ class LoginController: UIViewController {
     }
     @IBOutlet weak var loginLabel: UILabel!
     
-    private var disposeBag = DisposeBag()
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -88,25 +94,8 @@ extension LoginController {
         let username = self.usernameTextField.text ?? ""
         let password = self.passwordTextField.text ?? ""
         
-        self.indicator.startAnimating()
-        self.indicator.isHidden = false
-        
-        LoginService.shared.login(username: username, password: password)
-            .subscribe(onNext: { items in
-                
-                LoginViewModel.shared.onSuccessLogin(accessToken: items.token ?? "", username: items.username ?? "", accountNo: items.accountNo ?? "", view: self.view)
-                
-                self.indicator.stopAnimating()
-                self.indicator.isHidden = true
-                
-            }, onError: {error in
-                
-                LoginViewModel.shared.onErrorLogin(error: error)
-                
-                self.indicator.stopAnimating()
-                self.indicator.isHidden = true
-                
-        }).disposed(by: disposeBag)
+        LoginViewModel.shared.login(username: username, password: password, indicator: indicator, view: self.view, viewController: self, emptyValidationUsername: self.usernameErrorMessageLabel, emptyValidationPassword: self.passwordErrorMessageLabel, loginButton: self.loginButton)
+    
     }
     
     @objc func registerButtonAction(_ sender: UIButton) {

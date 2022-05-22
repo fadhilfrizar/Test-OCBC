@@ -24,6 +24,7 @@ class TransactionService: NSObject {
             "Accept": "application/json",
             "Authorization": accessToken ?? ""
         ]
+        print("access token", accessToken ?? "")
 
         // Call API from base api manager
         return BaseApiManager.instance.apiGetRequest(url: url,

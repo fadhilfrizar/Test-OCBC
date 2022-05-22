@@ -1,23 +1,23 @@
 //
-//  LoginUnitTest.swift
+//  TransactionUnitTest.swift
 //  OSBC TestTests
 //
-//  Created by frizar fadilah on 20/05/22.
+//  Created by frizar fadilah on 23/05/22.
 //
 
 import XCTest
 import RxSwift
 @testable import OSBC_Test
 
-class LoginUnitTest: XCTestCase {
+class TransactionUnitTest: XCTestCase {
     
-    var sut: LoginService!
+    var sut: TransactionService!
     private var disposeBag = DisposeBag()
     
     override func setUp() {
         let config = URLSessionConfiguration.ephemeral
         config.protocolClasses = [MockURLProtocol.self]
-        sut = LoginService()
+        sut = TransactionService()
     }
     
     override func tearDown() {
@@ -26,36 +26,38 @@ class LoginUnitTest: XCTestCase {
         MockURLProtocol.error = nil
     }
     
-    func loginTests() throws {
-        let status = "{\"status\":\"success\"}"//
+    func getTransactionTests(){
+
+        let status = "{\"status\":\"success\"}"
+
         MockURLProtocol.stubResponseData = status.data(using: .utf8)
         
-        let expectation = self.expectation (description: "Login Response Expectation")
+        let expectation = self.expectation (description: "Present Get Transaction Data Expectation")
         
-        sut.login(username: "test", password: "asdasd")
+        sut.transaction()
             .subscribe(onNext: { items in
-                //if success then token not null
-                XCTAssert(items.token != nil, "if token data get then success, else failed")
+                XCTAssertEqual(items.status, "success")
                 expectation.fulfill()
-                
+
             }, onError: { error in
                 XCTAssertNil(error.localizedDescription, "The response model for a request containing unknown JSON response, should have been nil")
                 expectation.fulfill()
             }).disposed(by: disposeBag)
-        
+
         self.wait(for: [expectation], timeout: 5)
+        
     }
     
-    func errorLoginTests() {
+    func errorTransactionTests() {
         // Arrange
         let status = "{\"message\":\"failed\"}"
         
         MockURLProtocol.stubResponseData =  status.data(using: .utf8)
         
-        let expectationError = expectation(description: "Error Login Expectation")
+        let expectationError = expectation(description: "Error Transaction Expectation")
         
         //Act
-        sut.login(username: "test", password: "asdasds")
+        sut.transaction()
             .subscribe(onNext: { items in
                 print("Response = \(items.status ?? "")")
                 
@@ -68,6 +70,7 @@ class LoginUnitTest: XCTestCase {
         //waitForExpectations(timeout: 5.0, handler: nil)
         self.wait(for: [expectationError], timeout: 5)
     }
+    
     
     
     override func setUpWithError() throws {

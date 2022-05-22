@@ -92,22 +92,9 @@ extension RegisterController {
         
         let username = self.usernameTextField.text ?? ""
         let password = self.passwordTextField.text ?? ""
+        let confirmPassword = self.confirmPasswordTextField.text ?? ""
         
-        RegisterService.shared.register(username: username, password: password)
-            .subscribe(onNext: { items in
-                
-                RegisterViewModel.shared.onSuccessRegister(view: self)
-                
-                self.indicator.stopAnimating()
-                self.indicator.isHidden = true
-                
-            }, onError: {error in
-                
-                RegisterViewModel.shared.onErrorLogin(error: error)
-                
-                self.indicator.stopAnimating()
-                self.indicator.isHidden = true
-                
-        }).disposed(by: disposeBag)
+        RegisterViewModel.shared.register(username: username, password: password, confirmPassword: confirmPassword, indicator: indicator, view: self.view, viewController: self, confirmPasswordValidation: confirmPasswordErrorMessageLabel)
+        
     }
 }

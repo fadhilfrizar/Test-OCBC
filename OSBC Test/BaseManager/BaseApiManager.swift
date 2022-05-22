@@ -23,17 +23,6 @@ class BaseApiManager {
     // After get responses object from server,
     // then mapping into mappable class with ObjectMapper Library.
     // This class can use in other class when you need to get request from server.
-
-    
-    func apiGetRequestHeaderStringServerPolicy<T: Decodable> (
-        url: String,
-        method: HTTPMethod, p
-        headers: [String: String],
-        parameters: Parameters?) -> Observable<T> {
-        
-        // look at bottom
-        return apiGetRequest(url: url, method: method, headers: headers, parameters: parameters, encoding: URLEncoding.default)
-    }
     
     func apiGetRequest<T: Decodable> (
         url: String,
@@ -52,49 +41,47 @@ class BaseApiManager {
         parameters: Parameters?,
         encoding: ParameterEncoding) -> Observable<T> {
         
-        
         configuration.timeoutIntervalForRequest = 60
-        //configuration.timeoutIntervalForResource = 60
         configuration.httpAdditionalHeaders = headers
-        
-        //        serverPolicy()
-        
+                
         return Observable<T>.create { observer in
             // Alamofire request url, method, and the result is responseObject
             let request = self.sessionManager.request(url, method: method, parameters: parameters, encoding: encoding, headers: headers).validate().responseDecodable { (response: DataResponse<T>) in
                                 
                 switch response.result {
                 // if success the response will be include in success callback
-                
                 case .success(let value):
                     if let data = response.data, let utf8Text = String(data: data, encoding: .utf8) {
                         debugPrint("API Response: \(utf8Text)")
                     }
                     observer.onNext(value)
                     observer.onCompleted()
-                // if fail, show will be show message error
-                
-                case .failure(_):
+                    
+                // if fail, will be show message error
+                case .failure(let error):
+                    if let data = response.data {
+                        print("response data error", String(data: data, encoding: .utf8)!)
+                    }
                     if let response = response.response {
                         switch response.statusCode {
                         case 400:
-                            print("")
+                            observer.onError(Const.ApiError.badRequest)
                         case 401:
-                            print("")
+                            observer.onError(Const.ApiError.session)
                         case 403:
-                            print("")
+                            observer.onError(Const.ApiError.forbidden)
                         case 404:
-                            print("")
+                            observer.onError(Const.ApiError.notFound)
                         case 409:
-                            print("")
+                            observer.onError(Const.ApiError.conflict)
                         case 422:
-                            print("")
+                            observer.onError(Const.ApiError.responseValidationFailed)
                         case 500:
-                            print("")
+                            observer.onError(Const.ApiError.internalServalError)
                         case 0:
-                            print("")
+                            observer.onError(Const.ApiError.lostConnection)
                         default:
-                            print("")
+                            observer.onError(error)
                         }
                         
                     }

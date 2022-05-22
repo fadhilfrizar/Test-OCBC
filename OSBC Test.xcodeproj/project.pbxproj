@@ -10,6 +10,10 @@
 		2D88200283D12F72735B4E27 /* Pods_OSBC_Test.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32C854D775517CBC961084DD /* Pods_OSBC_Test.framework */; };
 		92FBD9F780FCA6DD14CA4254 /* Pods_OSBC_Test_OSBC_TestUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66FF47437F3A5E5CBECCBC22 /* Pods_OSBC_Test_OSBC_TestUITests.framework */; };
 		A4D9493CE3175F7291F4F21C /* Pods_OSBC_TestTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04DF84E73ABB0ADB0064E667 /* Pods_OSBC_TestTests.framework */; };
+		B61E2CB3283ACF3000AEBE5E /* RoundedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B61E2CB2283ACF2F00AEBE5E /* RoundedView.swift */; };
+		B61E2CB6283AD2DA00AEBE5E /* MockURLProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B61E2CB5283AD2DA00AEBE5E /* MockURLProtocol.swift */; };
+		B61E2CB8283AD30B00AEBE5E /* TransactionUnitTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B61E2CB7283AD30B00AEBE5E /* TransactionUnitTest.swift */; };
+		B61E2CBA283AE5FB00AEBE5E /* Toast.swift in Sources */ = {isa = PBXBuildFile; fileRef = B61E2CB9283AE5FB00AEBE5E /* Toast.swift */; };
 		B68524392836762300836AA1 /* BaseApiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B68524382836762300836AA1 /* BaseApiManager.swift */; };
 		B685243D28372E2D00836AA1 /* HTTPStatusCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = B685243C28372E2D00836AA1 /* HTTPStatusCode.swift */; };
 		B685244028373AD000836AA1 /* Const.swift in Sources */ = {isa = PBXBuildFile; fileRef = B685243F28373AD000836AA1 /* Const.swift */; };
@@ -69,6 +73,10 @@
 		66FF47437F3A5E5CBECCBC22 /* Pods_OSBC_Test_OSBC_TestUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OSBC_Test_OSBC_TestUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6A4213FEB1E8FD29718C760D /* Pods-OSBC Test.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OSBC Test.release.xcconfig"; path = "Target Support Files/Pods-OSBC Test/Pods-OSBC Test.release.xcconfig"; sourceTree = "<group>"; };
 		AF99B08D35DB75781449209C /* Pods-OSBC Test-OSBC TestUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OSBC Test-OSBC TestUITests.debug.xcconfig"; path = "Target Support Files/Pods-OSBC Test-OSBC TestUITests/Pods-OSBC Test-OSBC TestUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		B61E2CB2283ACF2F00AEBE5E /* RoundedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedView.swift; sourceTree = "<group>"; };
+		B61E2CB5283AD2DA00AEBE5E /* MockURLProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockURLProtocol.swift; sourceTree = "<group>"; };
+		B61E2CB7283AD30B00AEBE5E /* TransactionUnitTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionUnitTest.swift; sourceTree = "<group>"; };
+		B61E2CB9283AE5FB00AEBE5E /* Toast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Toast.swift; sourceTree = "<group>"; };
 		B68524382836762300836AA1 /* BaseApiManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseApiManager.swift; sourceTree = "<group>"; };
 		B685243C28372E2D00836AA1 /* HTTPStatusCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPStatusCode.swift; sourceTree = "<group>"; };
 		B685243F28373AD000836AA1 /* Const.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Const.swift; sourceTree = "<group>"; };
@@ -162,6 +170,14 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		B61E2CB4283AD2C900AEBE5E /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				B61E2CB5283AD2DA00AEBE5E /* MockURLProtocol.swift */,
+			);
+			path = Mocks;
+			sourceTree = "<group>";
+		};
 		B68524372836761400836AA1 /* BaseManager */ = {
 			isa = PBXGroup;
 			children = (
@@ -192,6 +208,8 @@
 			children = (
 				B685244228373C1600836AA1 /* LogoutHelper.swift */,
 				B6F1961A283779250012747A /* TextFieldExtension.swift */,
+				B61E2CB2283ACF2F00AEBE5E /* RoundedView.swift */,
+				B61E2CB9283AE5FB00AEBE5E /* Toast.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -243,8 +261,10 @@
 		F17C716A2823D1D600B060FC /* OSBC TestTests */ = {
 			isa = PBXGroup;
 			children = (
+				B61E2CB4283AD2C900AEBE5E /* Mocks */,
 				B6F19612283774B20012747A /* LoginUnitTest.swift */,
 				B6F19614283774D50012747A /* RegisterUnitTest.swift */,
+				B61E2CB7283AD30B00AEBE5E /* TransactionUnitTest.swift */,
 				F17C716B2823D1D600B060FC /* OSBC_TestTests.swift */,
 			);
 			path = "OSBC TestTests";
@@ -567,10 +587,12 @@
 				F17C718B2823DCCB00B060FC /* Reachability.swift in Sources */,
 				B68524472837521100836AA1 /* BalancesModel.swift in Sources */,
 				B6F19619283775530012747A /* RegisterService.swift in Sources */,
+				B61E2CB3283ACF3000AEBE5E /* RoundedView.swift in Sources */,
 				F17C71962823DF2E00B060FC /* LoginModel.swift in Sources */,
 				B6F19617283775210012747A /* RegisterModel.swift in Sources */,
 				B685243D28372E2D00836AA1 /* HTTPStatusCode.swift in Sources */,
 				B685244328373C1600836AA1 /* LogoutHelper.swift in Sources */,
+				B61E2CBA283AE5FB00AEBE5E /* Toast.swift in Sources */,
 				B6F1961F28377DD40012747A /* TransactionModel.swift in Sources */,
 				B68524492837526A00836AA1 /* BalancesService.swift in Sources */,
 				B6F1961B283779250012747A /* TextFieldExtension.swift in Sources */,
@@ -593,6 +615,8 @@
 				B6F19615283774D50012747A /* RegisterUnitTest.swift in Sources */,
 				F17C716C2823D1D600B060FC /* OSBC_TestTests.swift in Sources */,
 				B6F19613283774B20012747A /* LoginUnitTest.swift in Sources */,
+				B61E2CB6283AD2DA00AEBE5E /* MockURLProtocol.swift in Sources */,
+				B61E2CB8283AD30B00AEBE5E /* TransactionUnitTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

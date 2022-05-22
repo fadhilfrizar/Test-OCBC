@@ -24,13 +24,13 @@ struct TransactionModel: Decodable {
 
 struct TransactionDataModel: Decodable {
     var transactionId: String?
-    var amount: Int?
+    var amount: Double?
     var transactionDate: String?
     var description: String?
     var transactionType: String?
     var receipient: TransactionReceipientModel?
     
-    init(transactionId: String?, amount: Int?, transactionDate: String?, description: String?, transactionType: String?, receipient: TransactionReceipientModel?) {
+    init(transactionId: String?, amount: Double?, transactionDate: String?, description: String?, transactionType: String?, receipient: TransactionReceipientModel?) {
         self.transactionId = transactionId
         self.amount = amount
         self.transactionDate = transactionDate
