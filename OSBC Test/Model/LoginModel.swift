@@ -13,12 +13,14 @@ struct LoginModel: Decodable {
     var token: String?
     var username: String?
     var accountNo: String?
+    var error: String?
     
-    init(status: String?,token: String?,username: String?,accountNo: String?) {
+    init(status: String?,token: String?,username: String?,accountNo: String?, error: String?) {
         self.status = status
         self.token = token
         self.username = username
         self.accountNo = accountNo
+        self.error = error
     }
     
     enum CodingKeys: String, CodingKey {
@@ -26,6 +28,7 @@ struct LoginModel: Decodable {
         case token = "token"
         case username = "username"
         case accountNo = "accountNo"
+        case error = "error"
     }
     
 }

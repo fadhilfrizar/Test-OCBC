@@ -29,7 +29,7 @@ class BalancesService: NSObject {
         return BaseApiManager.instance.apiGetRequest(url: url,
                                             method: .get,
                                             headers: header,
-                                            parameters: nil)
+                                                     parameters: nil, encoding: JSONEncoding.init(options: .prettyPrinted))
             .observeOn(MainScheduler.instance)
     }
     

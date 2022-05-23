@@ -23,17 +23,7 @@ class BaseApiManager {
     // After get responses object from server,
     // then mapping into mappable class with ObjectMapper Library.
     // This class can use in other class when you need to get request from server.
-    
-    func apiGetRequest<T: Decodable> (
-        url: String,
-        method: HTTPMethod,
-        headers: HTTPHeaders?,
-        parameters: Parameters?) -> Observable<T> {
-        
-        // look at bottom
-        return apiGetRequest(url: url, method: method, headers: headers!, parameters: parameters, encoding: URLEncoding.default)
-    }
-    
+
     func apiGetRequest<T: Decodable> (
         url: String,
         method: HTTPMethod,
@@ -46,16 +36,43 @@ class BaseApiManager {
                 
         return Observable<T>.create { observer in
             // Alamofire request url, method, and the result is responseObject
-            let request = self.sessionManager.request(url, method: method, parameters: parameters, encoding: encoding, headers: headers).validate().responseDecodable { (response: DataResponse<T>) in
+            let request = self.sessionManager.request(url, method: method, parameters: parameters, encoding: encoding, headers: headers).validate(statusCode: 200..<401).responseDecodable { (response: DataResponse<T>) in
                                 
+                let status = response.response?.statusCode
                 switch response.result {
                 // if success the response will be include in success callback
                 case .success(let value):
-                    if let data = response.data, let utf8Text = String(data: data, encoding: .utf8) {
-                        debugPrint("API Response: \(utf8Text)")
+                    if status == 200 {
+                        if let data = response.data, let utf8Text = String(data: data, encoding: .utf8) {
+                            debugPrint("API Response: \(utf8Text)")
+                        }
+                        observer.onNext(value)
+                        observer.onCompleted()
+                    } else {
+                        if let response = response.response {
+                            switch response.statusCode {
+                            case 400:
+                                observer.onError(Const.ApiError.badRequest)
+                            case 401:
+                                observer.onError(Const.ApiError.session)
+                            case 403:
+                                observer.onError(Const.ApiError.forbidden)
+                            case 404:
+                                observer.onError(Const.ApiError.notFound)
+                            case 409:
+                                observer.onError(Const.ApiError.conflict)
+                            case 422:
+                                observer.onError(Const.ApiError.responseValidationFailed)
+                            case 500:
+                                observer.onError(Const.ApiError.internalServalError)
+                            case 0:
+                                observer.onError(Const.ApiError.lostConnection)
+                            default:
+                                observer.onError(Const.ApiError.lostConnection)
+                            }
+                        }
                     }
-                    observer.onNext(value)
-                    observer.onCompleted()
+                    
                     
                 // if fail, will be show message error
                 case .failure(let error):

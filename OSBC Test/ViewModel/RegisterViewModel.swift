@@ -52,34 +52,25 @@ class RegisterViewModel {
     func onSuccessRegister(view: RegisterController) {
         
         view.navigationController?.popViewController(animated: true)
-//        UserDefaults.standard.set(accessToken, forKey: Const.PREF_ACCESS_TOKEN)
-//        UserDefaults.standard.set(username, forKey: Const.PREF_USERNAME)
-//        UserDefaults.standard.set(accountNo, forKey: Const.PREF_ACCOUNT_NO)
-//        
-//        UserDefaults.standard.synchronize()
-//        
-//        DispatchQueue.main.async {
-//            let homeController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "homeController") as! HomeController
-//            view.window?.rootViewController = homeController
-//        }
+        
     }
     
     func mapError(error: Error) {
         switch error {
         case Const.ApiError.session:
-            self.viewController?.showToast(message: error.localizedDescription, font: .systemFont(ofSize: 12.0))
+            self.viewController?.showToast(message: "Unauthorized", font: .systemFont(ofSize: 12.0))
         case Const.ApiError.conflict:
-            self.viewController?.showToast(message: error.localizedDescription, font: .systemFont(ofSize: 12.0))
+            self.viewController?.showToast(message: "Conflict", font: .systemFont(ofSize: 12.0))
         case Const.ApiError.forbidden:
-            self.viewController?.showToast(message: error.localizedDescription, font: .systemFont(ofSize: 12.0))
+            self.viewController?.showToast(message: "Forbidden", font: .systemFont(ofSize: 12.0))
         case Const.ApiError.notFound:
-            self.viewController?.showToast(message: error.localizedDescription, font: .systemFont(ofSize: 12.0))
+            self.viewController?.showToast(message: "Not found", font: .systemFont(ofSize: 12.0))
         case Const.ApiError.internalServalError:
-            self.viewController?.showToast(message: error.localizedDescription, font: .systemFont(ofSize: 12.0))
+            self.viewController?.showToast(message: "Internal server error", font: .systemFont(ofSize: 12.0))
         case Const.ApiError.lostConnection:
-            self.viewController?.showToast(message: error.localizedDescription, font: .systemFont(ofSize: 12.0))
+            self.viewController?.showToast(message: "Lost connection", font: .systemFont(ofSize: 12.0))
         default:
-            self.viewController?.showToast(message: error.localizedDescription, font: .systemFont(ofSize: 12.0))
+            self.viewController?.showToast(message: "Internal server error", font: .systemFont(ofSize: 12.0))
         }
     }
     
